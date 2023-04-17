@@ -10,8 +10,7 @@ public class Landmark {
 
     //constructor
 
-    public Landmark(String name,String country,int
-                    img){
+    public Landmark(String name,String country,int img){
         this.name=name;
         this.country=country;
         this.img=img;

@@ -1,11 +1,11 @@
 package com.elif.landmarkbook;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 
-import com.elif.landmarkbook.databinding.ActivityDetailBinding;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.elif.landmarkbook.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
@@ -31,7 +31,15 @@ public class MainActivity extends AppCompatActivity {
         Landmark brandenburg = new Landmark("Brandenburg","Germany",R.drawable.brandenburg);
         Landmark londoneye=new Landmark("London Eye", "London",R.drawable.londoneye);
 
+        landmarkArraylist.add(eyfel);
+        landmarkArraylist.add(collesium);
+        landmarkArraylist.add(brandenburg);
+        landmarkArraylist.add(londoneye);
 
+
+        binding.recyclerview.setLayoutManager(new LinearLayoutManager(this));
+        LandmarkAdapter landmarkadapter =new LandmarkAdapter(landmarkArraylist);
+        binding.recyclerview.setAdapter(landmarkadapter);
 
     }
 }

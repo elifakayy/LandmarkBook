@@ -11,7 +11,8 @@ import com.elif.landmarkbook.databinding.ActivityDetailBinding;
 public class DetailActivity extends AppCompatActivity {
     private ActivityDetailBinding binding;
 
-    TextView nametw;
+    //TextView nametw;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +23,6 @@ public class DetailActivity extends AppCompatActivity {
         //R.id dediğimizde ne kadar id varsa tek tek eşlemeye çalışıyor, verimsiz
         //nametw=findViewById(R.id.nametw);
         //view binding yapcaz
-
 
 
 
