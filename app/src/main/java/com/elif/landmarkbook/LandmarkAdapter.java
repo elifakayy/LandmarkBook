@@ -1,5 +1,6 @@
 package com.elif.landmarkbook;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,17 @@ public class LandmarkAdapter extends RecyclerView.Adapter<LandmarkAdapter.Landma
 
         holder.binding.recyclerviewtw.setText(landmarkArrayList.get(position).name);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(),DetailActivity.class);
 
+                Singleton singleton=Singleton.getInstance();
+                singleton.setSentLandmark(landmarkArrayList.get(position));
+                intent.putExtra("landmark",landmarkArrayList.get(position));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     //xmlin kaç kere oluştutulacağını söylicek
